@@ -43,4 +43,21 @@
             </tr>
         </table>
 
+        <hr>
+
+        <h3> Convex hull trick and Li Chao tree</h3>
+        <p>The idea of this approach is to maintain a lower convex hull of linear functions. Actually it would be a bit more convenient to consider them not as linear functions, but as points (k;b) on the plane such that we will have to find the point which has the least dot product with a given point (x;1), that is, for this point kx+b is minimized which is the same as initial problem. </p>
+        <pre>
+            typedef int ftype;
+            typedef complex<ftype> point;
+            #define x real
+            #define y imag
+            
+            ftype dot(point a, point b) {
+                return (conj(a) * b).x();
+            }
+            
+            ftype cross(point a, point b) {
+                return (conj(a) * b).y();
+            }</pre>
 </html>
